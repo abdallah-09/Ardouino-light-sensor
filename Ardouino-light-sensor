@@ -1,0 +1,40 @@
+const int ainput=0;
+const int lam1=13;
+const int lam2=12;
+const int lam3=11;
+const int limit=300;
+ 
+void setup(){
+  Serial.begin(9600) ;
+  pinMode(lam1,OUTPUT);
+  pinMode(lam2,OUTPUT);
+  pinMode(lam3,OUTPUT);
+}
+void loop (){
+  int readvalue=analogRead(ainput);
+  if (readvalue>=limit){
+     digitalWrite(lam1, HIGH);
+  delay(300);
+  digitalWrite(lam1, LOW);
+  delay(300);
+  digitalWrite(lam2, HIGH);
+  delay(300); 
+  digitalWrite(lam2, LOW);
+  delay(300);
+   digitalWrite(lam3, HIGH);
+  delay(300); 
+  digitalWrite(lam3, LOW);
+  delay(300);
+  }else {
+     digitalWrite(lam1, LOW);
+  delay(300);
+  digitalWrite(lam2, LOW);
+  delay(300);
+  digitalWrite(lam3, LOW);
+  delay(300);
+  }
+  Serial.print("value is   ");
+  Serial.println(readvalue);
+  delay(1000);
+ 
+  }
